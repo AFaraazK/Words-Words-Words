@@ -60,10 +60,35 @@ body{
 .previous{
     height: 5rem;
 }
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: space-between;
+    width: 90%;
+}
 
+.submit{
+    width: 150px;
+    height: 35px;
+    margin-top: 15px;
+    align-self: start;
+    background-color: #50409A;
+    border-radius: 6px;
+    border-color: #50409A;
+    color: #FF7BBF;
+    font-weight: bold;
+    letter-spacing: .3ch; 
+}
 .reset{
     width: 100px;
     height: 25px;
     margin-top: 15px;
     align-self: start;
+    background-color: #50409A;
+    border-radius: 6px;
+    border-color: #50409A;
+    color: #FF7BBF;
+    font-weight: bold;
+    letter-spacing: .3ch;
 }
