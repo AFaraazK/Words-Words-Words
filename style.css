@@ -19,11 +19,51 @@ body{
     height: 100vh;
 }
 
-#circle {
-    width: 500px;
-    height: 500px;
-    -webkit-border-radius: 250px;
-    -moz-border-radius: 250px;
-    border-radius: 250px;
-    background: rgb(39, 165, 182);
+.UI{
+    background-color: #50409A;
+    height: 30rem;
+    width: 50rem;
+    border-radius: 25px;
+}
+.current{
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.typing{
+    height:80%;
+    width: 80%;
+    background-color: #964EC2;
+    border-radius: 8px;
+    color: #FF7BBF;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    letter-spacing: 2rem;
+    font-size: 4rem;
+}
+.lineB{
+    height: 2px;
+    background: #FF7BBF;
+}
+.letters{
+    color: #FF7BBF;
+    font-size: 4rem;
+    height: 18rem;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+    margin-left: 150px;
+}
+.previous{
+    height: 5rem;
+}
+
+.reset{
+    width: 100px;
+    height: 25px;
+    margin-top: 15px;
+    align-self: start;
 }
