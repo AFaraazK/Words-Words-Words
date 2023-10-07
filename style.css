@@ -8,4 +8,22 @@ body{
     background-color: rgb(12, 7, 15);
     font-family: monospace;
     display: flex;
+    justify-content: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#circle {
+    width: 500px;
+    height: 500px;
+    -webkit-border-radius: 250px;
+    -moz-border-radius: 250px;
+    border-radius: 250px;
+    background: rgb(39, 165, 182);
 }
