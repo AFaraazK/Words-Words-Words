@@ -21,20 +21,20 @@ letterButtons.forEach(letter => {
 })
 
 enterButton.addEventListener('click', e => {
-    alert("Enter");
+    if(validateEntry(typing.textContent.toLowerCase())){
+        alert("Word!");
+    } else {
+        alert("LOL NO");
+    }
+    typing.textContent = '';
 })
 
-function submit(){
-    // read the typing panel
-    // check if it's a valid word, if so add it to the previous panel, points++
-    // reset the typing display 
-}
 function randomizeLetters(){
     // select 6 random letters without replacement, at least one vowel 
     const result = [];
     const alphabet = 'abcdefghijklmnopqrstuvwxyz';
     const vowels = 'aeiou';
-    while(result.length < 5){
+    while(result.length < 4){
         let ran = Math.floor(Math.random() * 26);
         let ranA = alphabet.charAt(ran)
         if(!(result.includes(ranA))){
@@ -56,18 +56,46 @@ function randomizeLetters(){
 
 // create an array of possible words, base on first letter (can only be one of the six)
 function createWordList(){
-    // read the word array
     // select the valid ones -> first trim by first letter -> then look for usability
+    let game_letters = [];
+    letterButtons.forEach(letter => {
+        game_letters.push(letter.textContent.toLowerCase());
+    })
+    dictionary.forEach(word => {
+        // console.log(word);
+        if(validateWord(word)){
+            valid_words.push(word);
+        }
+    })
 }
-// validate word function
-function validateWord(){
-
+// HELPER: createWorldList - validate word function
+function validateWord(word){
+    let game_letters = [];
+    letterButtons.forEach(letter => {
+        game_letters.push(letter.textContent.toLowerCase());
+    })
+    const allowedLetter = new Set(game_letters);
+    for(let i = 0;i<word.length;i++){
+        if(!allowedLetter.has(word[i])){
+            return false;
+        }
+    }
     return true;
+}
+// 
+function validateEntry(word){
+    if(valid_words.includes(word)){
+        return true;
+    }
+    return false;
 }
 // initialize page
 function start(){
-    randomizeLetters()
+    randomizeLetters();
     // create word list
 }
 
+let valid_words = [];
 start();
+createWordList()
+console.log(valid_words);
