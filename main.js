@@ -1,7 +1,8 @@
 const typing = document.querySelector(".typing");
 const clearButton = document.querySelector(".clear");
-const enterButton = document.querySelector(".submit")
-const letterButtons = document.querySelectorAll(".letter")
+const enterButton = document.querySelector(".submit");
+const letterButtons = document.querySelectorAll(".letter");
+const previous = document.querySelector(".previous");
 
 clearButton.addEventListener('click', e => {
     typing.innerHTML = "";
@@ -23,6 +24,7 @@ letterButtons.forEach(letter => {
 enterButton.addEventListener('click', e => {
     if(validateEntry(typing.textContent.toLowerCase())){
         alert("Word!");
+        previous.textContent = previous.textContent + typing.textContent.toLowerCase() + ' ';
     } else {
         alert("LOL NO");
     }

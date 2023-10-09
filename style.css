@@ -105,3 +105,10 @@ body{
     transform: scale(1.2);
     font-weight: bold;
 }
+.previous{
+    color: #964EC2;
+    margin: 25px;
+    text-align: center;
+    word-spacing: 15px;
+    font-size: 1.5rem;
+}
