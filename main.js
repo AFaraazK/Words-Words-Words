@@ -5,10 +5,12 @@ const letterButtons = document.querySelectorAll(".letter")
 
 clearButton.addEventListener('click', e => {
     typing.innerHTML = "";
+    // CLEAR PREVIOUS WORD SECTION
 })
 
 letterButtons.forEach(letter => {
     letter.addEventListener('click', e => {
+        // add clicked letter to the display, if under 7 characters
         let current_display = typing.textContent;
         let selected = letter.textContent;
         let updated = typing.textContent + selected; 
@@ -23,10 +25,12 @@ enterButton.addEventListener('click', e => {
 })
 
 function submit(){
-
+    // read the typing panel
+    // check if it's a valid word, if so add it to the previous panel, points++
+    // reset the typing display 
 }
-// 2 vowels, 4 consonants
 function randomizeLetters(){
+    // select 6 random letters without replacement, at least one vowel 
     const result = [];
     const alphabet = 'abcdefghijklmnopqrstuvwxyz';
     const vowels = 'aeiou';
@@ -44,13 +48,22 @@ function randomizeLetters(){
             result.push(ranV);
         }
     }
-
     // place letters into DOM
     letterButtons.forEach((letter, index) => {
         letter.textContent = String(result[index]).toUpperCase();
     })
 }
-// 
+
+// create an array of possible words, base on first letter (can only be one of the six)
+function createWordList(){
+    // read the word array
+    // select the valid ones -> first trim by first letter -> then look for usability
+}
+// validate word function
+function validateWord(){
+
+    return true 
+}
 
 
 randomizeLetters()
