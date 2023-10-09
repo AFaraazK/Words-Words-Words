@@ -91,4 +91,8 @@ body{
     color: #FF7BBF;
     font-weight: bold;
     letter-spacing: .3ch;
+    cursor: pointer;
+}
+.letter{
+    cursor: pointer;
 }
