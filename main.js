@@ -62,8 +62,12 @@ function createWordList(){
 // validate word function
 function validateWord(){
 
-    return true 
+    return true;
+}
+// initialize page
+function start(){
+    randomizeLetters()
+    // create word list
 }
 
-
-randomizeLetters()
+start();
