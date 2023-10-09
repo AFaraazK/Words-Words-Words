@@ -55,7 +55,7 @@ body{
     align-items: center;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(2,1fr);
-    margin-left: 150px;
+    margin-left: 100px;
 }
 .previous{
     height: 5rem;
@@ -95,4 +95,13 @@ body{
 }
 .letter{
     cursor: pointer;
+    height:100px;
+    width:125px;
+    text-align: center;
+    align-self: center;
+    transition: transform .1s ease-in;
+}
+.letter:hover{
+    transform: scale(1.2);
+    font-weight: bold;
 }
