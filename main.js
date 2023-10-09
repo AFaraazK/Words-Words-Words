@@ -25,15 +25,23 @@ enterButton.addEventListener('click', e => {
 function submit(){
 
 }
-
+// 2 vowels, 4 consonants
 function randomizeLetters(){
     const result = [];
     const alphabet = 'abcdefghijklmnopqrstuvwxyz';
-    while(result.length < 6){
+    const vowels = 'aeiou';
+    while(result.length < 5){
         let ran = Math.floor(Math.random() * 26);
         let ranA = alphabet.charAt(ran)
         if(!(result.includes(ranA))){
             result.push(ranA);
+        }
+    }
+    while(result.length < 6){
+        let ranN = Math.floor(Math.random() * 5);
+        let ranV = vowels.charAt(ranN)
+        if(!(result.includes(ranV))){
+            result.push(ranV);
         }
     }
 
@@ -42,5 +50,7 @@ function randomizeLetters(){
         letter.textContent = String(result[index]).toUpperCase();
     })
 }
+// 
+
 
 randomizeLetters()
