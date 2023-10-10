@@ -80,7 +80,7 @@ body{
     font-weight: bold;
     letter-spacing: .3ch; 
 }
-.clear{
+.clear,.next,.answer_key{
     width: 100px;
     height: 25px;
     margin-top: 15px;
@@ -107,8 +107,11 @@ body{
 }
 .previous{
     color: #964EC2;
+    overflow: auto;
+    height: 50px;
     margin: 25px;
     text-align: center;
     word-spacing: 15px;
     font-size: 1.5rem;
+    z-index: 2;
 }

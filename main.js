@@ -3,12 +3,13 @@ const clearButton = document.querySelector(".clear");
 const enterButton = document.querySelector(".submit");
 const letterButtons = document.querySelectorAll(".letter");
 const previous = document.querySelector(".previous");
+const keyHover = document.querySelector(".keyHover");
+const keyButton = document.querySelector(".keyButton");
 
 clearButton.addEventListener('click', e => {
     typing.innerHTML = "";
     // CLEAR PREVIOUS WORD SECTION
 })
-
 letterButtons.forEach(letter => {
     letter.addEventListener('click', e => {
         // add clicked letter to the display, if under 7 characters
@@ -20,17 +21,13 @@ letterButtons.forEach(letter => {
         }
     })
 })
-
 enterButton.addEventListener('click', e => {
     if(validateEntry(typing.textContent.toLowerCase())){
-        alert("Word!");
         previous.textContent = previous.textContent + typing.textContent.toLowerCase() + ' ';
     } else {
-        alert("LOL NO");
     }
     typing.textContent = '';
 })
-
 function randomizeLetters(){
     // select 6 random letters without replacement, at least one vowel 
     const result = [];
@@ -96,6 +93,17 @@ function start(){
     randomizeLetters();
     // create word list
 }
+function keyReveal(){
+    key = '';
+    for(let i = 0; i<valid_words.length; i++){
+        key = key + " " + valid_words[i];
+    }
+    previous.textContent = key;
+}
+function next(){
+    window.location.reload("Refresh");
+}
+
 
 let valid_words = [];
 start();
