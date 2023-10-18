@@ -115,3 +115,16 @@ body{
     font-size: 1.5rem;
     z-index: 2;
 }
+.keyPanel{
+    position: fixed;
+    color:#FF7BBF;
+    font-size: 16px;
+    bottom: 24px;
+    width: inherit;
+}
+.pointsDisplay{
+    position: fixed;
+    color: #FFF;
+    font-size: 36px;
+    margin: 22px;
+}

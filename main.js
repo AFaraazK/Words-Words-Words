@@ -5,6 +5,10 @@ const letterButtons = document.querySelectorAll(".letter");
 const previous = document.querySelector(".previous");
 const keyHover = document.querySelector(".keyHover");
 const keyButton = document.querySelector(".keyButton");
+const point_display = document.querySelector(".pointsDisplay")
+const keyPanel = document.querySelector(".keyPanel");
+
+// TODO: stop repeat word entries: make previous an array and compare
 
 clearButton.addEventListener('click', e => {
     typing.innerHTML = "";
@@ -24,7 +28,8 @@ letterButtons.forEach(letter => {
 enterButton.addEventListener('click', e => {
     if(validateEntry(typing.textContent.toLowerCase())){
         previous.textContent = previous.textContent + typing.textContent.toLowerCase() + ' ';
-    } else {
+        point_value += typing.textContent.length;
+        point_display.textContent = point_value;
     }
     typing.textContent = '';
 })
@@ -62,13 +67,13 @@ function createWordList(){
     })
     dictionary.forEach(word => {
         // console.log(word);
-        if(validateWord(word)){
+        if(_validateWord(word)){
             valid_words.push(word);
         }
     })
 }
 // HELPER: createWorldList - validate word function
-function validateWord(word){
+function _validateWord(word){
     let game_letters = [];
     letterButtons.forEach(letter => {
         game_letters.push(letter.textContent.toLowerCase());
@@ -81,7 +86,7 @@ function validateWord(word){
     }
     return true;
 }
-// 
+// Validate word in the game
 function validateEntry(word){
     if(valid_words.includes(word)){
         return true;
@@ -91,21 +96,23 @@ function validateEntry(word){
 // initialize page
 function start(){
     randomizeLetters();
-    // create word list
+    createWordList();
 }
 function keyReveal(){
+    if(keyPanel.textContent.length > 0){
+        keyPanel.textContent = '';
+        return;
+    }
     key = '';
     for(let i = 0; i<valid_words.length; i++){
         key = key + " " + valid_words[i];
     }
-    previous.textContent = key;
+    keyPanel.textContent = key;
 }
 function next(){
     window.location.reload("Refresh");
 }
 
-
+let point_value = 0; 
 let valid_words = [];
 start();
-createWordList()
-console.log(valid_words);
