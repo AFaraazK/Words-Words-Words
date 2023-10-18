@@ -8,11 +8,11 @@ const keyButton = document.querySelector(".keyButton");
 const point_display = document.querySelector(".pointsDisplay")
 const keyPanel = document.querySelector(".keyPanel");
 
-// TODO: stop repeat word entries: make previous an array and compare
+// TODO: Keyboard input
 
+// CLEAR PREVIOUS WORD SECTION
 clearButton.addEventListener('click', e => {
     typing.innerHTML = "";
-    // CLEAR PREVIOUS WORD SECTION
 })
 letterButtons.forEach(letter => {
     letter.addEventListener('click', e => {
@@ -61,13 +61,11 @@ function randomizeLetters(){
 
 // create an array of possible words, base on first letter (can only be one of the six)
 function createWordList(){
-    // select the valid ones -> first trim by first letter -> then look for usability
     let game_letters = [];
     letterButtons.forEach(letter => {
         game_letters.push(letter.textContent.toLowerCase());
     })
     dictionary.forEach(word => {
-        // console.log(word);
         if(_validateWord(word)){
             valid_words.push(word);
         }
