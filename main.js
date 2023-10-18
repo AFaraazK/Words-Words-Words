@@ -28,6 +28,7 @@ letterButtons.forEach(letter => {
 enterButton.addEventListener('click', e => {
     if(validateEntry(typing.textContent.toLowerCase())){
         previous.textContent = previous.textContent + typing.textContent.toLowerCase() + ' ';
+        previous_words.push(typing.textContent.toLowerCase());
         point_value += typing.textContent.length;
         point_display.textContent = point_value;
     }
@@ -88,7 +89,7 @@ function _validateWord(word){
 }
 // Validate word in the game
 function validateEntry(word){
-    if(valid_words.includes(word)){
+    if(valid_words.includes(word) && !previous_words.includes(word)){
         return true;
     }
     return false;
@@ -115,4 +116,5 @@ function next(){
 
 let point_value = 0; 
 let valid_words = [];
+previous_words = [];
 start();
